@@ -1,0 +1,42 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+                        background-color: #FCE4EC;
+        }
+
+        h1 {
+            font-family: "Impact", sans-serif;
+            color: #FF4081;
+        }
+
+        form {
+            font-family: "Comic Sans MS", cursive;
+            color: #FF4081;
+        }
+    </style>
+</head>
+<body>
+    <h1>Добавление университета</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for=>Название университета:</label>
+        {% render_field form.name %}<br>
+
+        <label for=>Короткое название университета:</label>
+        {% render_field form.abbreviated %}<br>
+
+        <label for=>Дата создания:</label>
+        {% render_field form.date_creation %}<br>
+
+        <button type="submit" style="background-color: #FF4081; color: white; border: none; padding: 10px 20px;">Добавить</button>
+    </form>
+</body>
+</html>

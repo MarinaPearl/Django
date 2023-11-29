@@ -1,0 +1,41 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+ <h1>Добавление университета</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for=>ФИО:</label>
+        {% render_field form.full_name %}<br><br>
+
+        <label for=>Дата рождения:</label>
+        {% render_field form.date_of_birth %}<br><br>
+
+        <label for=>Университет:</label>
+        {% render_field form.university %}<br><br>
+
+        <label for=>Дата поступления:</label>
+        {% render_field form.year_admission %}<br><br>
+
+        <button type="submit" style="background-color: #FF4081; color: white; border: none; padding: 10px 20px;">Добавить</button>
+    </form>
+</div>
+</body>
+</html>

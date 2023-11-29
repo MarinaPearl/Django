@@ -1,0 +1,45 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение университета</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+                        background-color: #FCE4EC;
+        }
+
+        h1 {
+            font-family: "Impact", sans-serif;
+            color: #FF4081;
+        }
+
+        form {
+            font-family: "Comic Sans MS", cursive;
+            color: #FF4081;
+        }
+    </style>
+</head>
+<body>
+<h1>Изменение университета</h1>
+<form action="{% url 'update_university' id %}" method="post">
+    {% csrf_token %}
+    <label for="name">Новое название университета:</label>
+    {% render_field university.name %}
+    <br>
+    <label for="name">Новое короткое название университета:</label>
+    {% render_field university.abbreviated %}
+    <br>
+    <label for="name">Новая дата создание:</label>
+    {% render_field university.date_creation %}
+    <br>
+    <br>
+    <button type="submit">Изменить</button>
+</form>
+</body>
+</html>

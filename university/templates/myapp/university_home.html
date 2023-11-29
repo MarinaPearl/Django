@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Страница с розовым фоном</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white; /* Розовый цвет фона */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 100vh;
+            align-items: center;
+            padding: 20px;
+            margin-top: 2vh;
+            background-color: #FFC0CB;
+        }
+
+        .input-field {
+            margin-bottom: 10px;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Все университеты</h1>
+{% for field in universities %}
+<div class="container">
+    <div class="alert alert-warning">
+        <h3>{{field.name}}</h3>
+        <h3>{{field.abbreviated}}</h3>
+        <h3>{{field.data_creation}}</h3>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
